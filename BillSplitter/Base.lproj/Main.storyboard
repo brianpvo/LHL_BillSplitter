@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CfM-zf-StJ">
+                                <rect key="frame" x="10" y="60" width="355" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="2" maxValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="ecn-sO-rzZ">
+                                <rect key="frame" x="85" y="118" width="204" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Xyw-PE-ibn"/>
+                                </constraints>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZZ-N5-cnj">
+                                <rect key="frame" x="164" y="173" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="calculateSplitAmount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e1o-AV-bGP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ike-Jz-CW7">
+                                <rect key="frame" x="87" y="237" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="YlJ-ry-lXt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CfM-zf-StJ" secondAttribute="trailing" constant="10" id="011-kB-cTh"/>
+                            <constraint firstItem="MZZ-N5-cnj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1zr-Sw-un9"/>
+                            <constraint firstItem="MZZ-N5-cnj" firstAttribute="top" secondItem="ecn-sO-rzZ" secondAttribute="bottom" constant="25" id="6SA-9f-QIP"/>
+                            <constraint firstItem="ecn-sO-rzZ" firstAttribute="top" secondItem="CfM-zf-StJ" secondAttribute="bottom" constant="28" id="8Kk-71-8FC"/>
+                            <constraint firstItem="Ike-Jz-CW7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8gu-O0-6Ut"/>
+                            <constraint firstItem="Ike-Jz-CW7" firstAttribute="width" secondItem="ecn-sO-rzZ" secondAttribute="width" id="CEh-7x-9Fc"/>
+                            <constraint firstItem="CfM-zf-StJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="SIM-ad-9qB"/>
+                            <constraint firstItem="CfM-zf-StJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YFG-Rh-nXG"/>
+                            <constraint firstItem="CfM-zf-StJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="lJ6-VN-3pt"/>
+                            <constraint firstItem="ecn-sO-rzZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rII-f2-aGq"/>
+                            <constraint firstItem="Ike-Jz-CW7" firstAttribute="top" secondItem="MZZ-N5-cnj" secondAttribute="bottom" constant="34" id="xCX-oT-kc5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="numberOfPeopleSlider" destination="ecn-sO-rzZ" id="8Oh-PD-DNR"/>
+                        <outlet property="splitAmountLabel" destination="Ike-Jz-CW7" id="VDJ-MM-0JU"/>
+                        <outlet property="totalBillField" destination="CfM-zf-StJ" id="cRk-sm-V4s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
