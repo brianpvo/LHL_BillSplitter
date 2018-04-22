@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *totalBillField;
 @property (weak, nonatomic) IBOutlet UISlider *numberOfPeopleSlider;
 @property (weak, nonatomic) IBOutlet UILabel *splitAmountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *sliderLabel;
 
 @end
 
@@ -22,8 +23,14 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 - (IBAction)calculateSplitAmount:(id)sender {
-    NSInteger amount =  [self.totalBillField.text integerValue];
+    CGFloat amount =  [self.totalBillField.text integerValue];
+    NSInteger quantity =  self.numberOfPeopleSlider.value;
+    self.splitAmountLabel.text = [NSString stringWithFormat:@"$%.2f Each", amount / quantity];
     
+}
+- (IBAction)showSliderValue:(UISlider *)sender {
+    NSInteger quantity =  sender.value;
+    self.sliderLabel.text = [NSString stringWithFormat:@"Number of people: %ld", quantity];
 }
 
 
